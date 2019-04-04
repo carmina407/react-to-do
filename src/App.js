@@ -28,7 +28,6 @@ handleChange(e) {
      const newTodo = { description: this.state.newTodoDescription, isCompleted: false };
      this.setState({ todos: [...this.state.todos, newTodo], newTodoDescription: '' });
        }
-    ...
    }
 
 toggleComplete(index) {
