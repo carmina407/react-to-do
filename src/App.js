@@ -15,35 +15,34 @@ import ToDo from './components/ToDo.js';
      };
      this.deleteTodo = this.deleteTodo.bind(this);
    }
+}
 
-
-handleChange(e) {
+handleChange(e);{
   this.setState({ newTodoDescription: e.target.value })
       }
 
-   handleSubmit(e) {
+   handleSubmit(e);{
      e.preventDefault();
           if (!this.state.newTodoDescription) { return }
      console.log('handleSubmit called');
      const newTodo = { description: this.state.newTodoDescription, isCompleted: false };
      this.setState({ todos: [...this.state.todos, newTodo], newTodoDescription: '' });
        }
-   }
 
-toggleComplete(index) {
+toggleComplete(index);{
   const todos = this.state.todos.slice();
   const todo = todos[index];
   todo.isCompleted = todo.isCompleted ? false : true;
   this.setState({ todos: todos });
 }
 
-deleteTodo(id) {
+deleteTodo(id);{
     this.setState((prevState) => ({
       items: prevState.items.filter(item => item.id !== id),
     }))
   }
 
-   render() {
+   render();{
      return (
        <div className="App">
         <ul>
