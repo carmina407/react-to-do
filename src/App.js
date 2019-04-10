@@ -10,18 +10,17 @@ import ToDo from './components/ToDo.js';
          { id: 1, description: 'Cook dinner' , isCompleted: true },
          { id: 2, description: 'Do the dishes' , isCompleted: false },
          { id: 3, description: 'Give the baby a bath' , isCompleted: false }
-       ],
+       ]
        newTodoDescription: ''
      };
      this.deleteTodo = this.deleteTodo.bind(this);
    }
-}
 
-handleChange(e);{
+handleChange(e){
   this.setState({ newTodoDescription: e.target.value })
       }
 
-   handleSubmit(e);{
+   handleSubmit(e){
      e.preventDefault();
           if (!this.state.newTodoDescription) { return }
      console.log('handleSubmit called');
@@ -29,20 +28,20 @@ handleChange(e);{
      this.setState({ todos: [...this.state.todos, newTodo], newTodoDescription: '' });
        }
 
-toggleComplete(index);{
+toggleComplete(index){
   const todos = this.state.todos.slice();
   const todo = todos[index];
   todo.isCompleted = todo.isCompleted ? false : true;
   this.setState({ todos: todos });
 }
 
-deleteTodo(id);{
+deleteTodo(id){
     this.setState((prevState) => ({
       items: prevState.items.filter(item => item.id !== id),
     }))
   }
 
-   render();{
+   render(){
      return (
        <div className="App">
         <ul>
