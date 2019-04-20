@@ -29,7 +29,11 @@ class App extends Component {
 
     console.log('handleSubmit called');
 
-    const newTodo = { description: this.state.newTodoDescription, isCompleted: false };
+    const newTodo = {
+      description: this.state.newTodoDescription,
+      isCompleted: false,
+      id: this.state.todos.length + 1,
+    };
 
     this.setState({ todos: [...this.state.todos, newTodo], newTodoDescription: '' });
   }
